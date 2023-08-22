@@ -4,7 +4,6 @@ body {
 .grid-container{
     display: grid;
     grid-template-columns: [first] 33% [second] 33% [third] auto [end] auto;
-    /* grid-template-rows: [start] 16.6% [row2] 16.6% [row3] 16.6% [row4] 16.6% [row5] 16.6% [row6] auto; */
     grid-auto-rows: minmax(100px, auto);
     height: 97vh;
 }
@@ -49,7 +48,7 @@ body {
 }
 .bg-pink{
     background-color: #ff86cd;
-    grid-area: 2 / 4 / auto1 / auto;
+    grid-area: 2 / 4 / auto / auto;
 }
 .bg-putih{
     background-color: #fff;
