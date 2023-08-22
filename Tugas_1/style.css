@@ -6,7 +6,9 @@
     grid-auto-rows: minmax(100px, auto);
 }
 .text-center{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .text-white{
     color: #fff;
@@ -59,7 +61,7 @@
 .bg-biru-muda{
     background-color: #0dcaf0;
     border: 1px solid #000;
-    grid-area: 3 / 4 / span 3 / span 1;
+    grid-area: 3 / 4 / span 2 / span 1;
 }
 .bg-orange{
     background-color: #fd7e14;
