@@ -1,0 +1,12 @@
+{
+    "barang": [
+        {"id":"PR01","image": "assets/strawberry-sandwich.jpg", "namaBarang": "Strawberry Sandwich", "harga": 15000},
+        {"id":"PR02","image": "assets/pancake.jpg", "namaBarang": "Pancake", "harga": 30000},
+        {"id":"PR03","image": "assets/acaibowl.jpg", "namaBarang": "Acai Bowl", "harga": 50000},
+        {"id":"PR04","image": "assets/soes.jpg", "namaBarang": "Soes Plate", "harga": 60000},
+        {"id":"PR05","image": "assets/cilok.jpg", "namaBarang": "Cilok", "harga": 12500},
+        {"id":"PR06","image": "assets/takoyaki.jpg", "namaBarang": "Takoyaki", "harga": 38000},
+        {"id":"PR07","image": "assets/blue-hawaii.jpg", "namaBarang": "Blue Hawaii Drink", "harga": 24000},
+        {"id":"PR08","image": "assets/caramel.jpg", "namaBarang": "Iced Caramel Macchiato", "harga": 28500}
+    ]
+}
