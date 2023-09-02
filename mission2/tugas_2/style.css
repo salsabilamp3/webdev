@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 100vh;
+
+    user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: black;
+}
+
+canvas{
+    border: 1px solid black;
+    background-color: white;
+}
