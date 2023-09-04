@@ -99,9 +99,97 @@ class Cart {
               <h5 class="fw-semibold">${formatIDR(total)}</h5>
               <h5 class="fw-semibold">${formatIDR(pajak)}</h5>
               <h5 class="fw-semibold">${formatIDR(grandTotal)}</h5>
-              <button type="button" class="btn btn-primary mt-3" onclick="printStruk()">Cetak Struk</button>
+              <button type="button" class="btn btn-primary mt-3 printStruk">Cetak Struk</button>
           </div>
       </div>`;
+
+    const printStrukBtn = document.querySelector('.printStruk');
+    printStrukBtn.addEventListener('click', () => {
+      this.printStruk();
+    });
+  }
+
+  printStruk() {
+    const receiptWindow = window.open('', '', 'width=600,height=800');
+  
+    const total = this.cart.reduce((acc, curr) => acc + curr.subtotal, 0);
+    const tax = total * 0.11;
+    const grandTotal = total + tax;
+  
+    const receiptContent = `
+      <html>
+        <head>
+          <title>Struk Pembayaran</title>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        </head>
+        <body>
+          <div class="container-fluid px-5 my-2">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h4>Struk Pembayaran</h4>
+                <h5>Toko Mission 2</h5>
+                <h6>Jl. Tugas No. 1</h6>
+                <h6>Telp: 081110678821</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h5>=====================================</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <table style="width:100%">
+                  <tr>
+                    <th>Nama Barang</th>
+                    <th>Harga</th>
+                    <th>Qty</th>
+                    <th>Subtotal</th>
+                  </tr>
+                  ${this.cart.map(item => `
+                    <tr>
+                      <td>${item.nama}</td>
+                      <td>${formatIDR(item.harga)}</td>
+                      <td>${item.qty}</td>
+                      <td>${formatIDR(item.subtotal)}</td>
+                    </tr>
+                  `).join('')}
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-end">
+                <h5>=====================================</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-end">
+                <h6>Total Pembelian: ${formatIDR(total)}</h6>
+                <h6>Pajak 11%: ${formatIDR(tax)}</h6>
+                <h6>Total Pembayaran: ${formatIDR(grandTotal)}</h6>
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+  
+    receiptWindow.document.open();
+    receiptWindow.document.write(receiptContent);
+    receiptWindow.document.close();
   }
 }
 
@@ -149,8 +237,4 @@ function formatIDR(number) {
   }).format(number);
 
   return formattedNumber;
-}
-
-function printStruk() {
-  // Implement your print logic here
 }
